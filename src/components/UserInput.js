@@ -9,11 +9,6 @@ const UserInput = ({ id, SetuserId }) => {
 
   const [message, setMessage] = useState({ error: false, msg: "" });
 
-  const getselectitems = async () => {
-    const data = await UserDataService.getselectuser();
-    setselectitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
