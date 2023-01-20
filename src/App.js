@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "./App.css";
+import { UserDataList, UserInput } from "./components";
 
 function App() {
+  const [UserId, SetuserId] = useState("");
+
+  const userHandeler = (id) => {
+    console.log("The ID of document to be edited: ", id);
+    SetuserId(id);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container style={{ width: "400px" }}>
+        <Row>
+          <Col>
+            <UserInput id={UserId} SetuserId={SetuserId} />
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col>
+            <UserDataList userlistId={userHandeler} />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
 
