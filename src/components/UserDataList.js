@@ -19,7 +19,7 @@ const UserDataList = ({ userlistId }) => {
   };
   return (
     <>
-      <div className="mb-2">
+      <div className="mb-3">
         <Button variant="dark edit" onClick={getallData}>
           Refresh List
         </Button>

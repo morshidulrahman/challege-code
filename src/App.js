@@ -7,21 +7,20 @@ function App() {
   const [UserId, SetuserId] = useState("");
 
   const userHandeler = (id) => {
-    console.log("The ID of document to be edited: ", id);
     SetuserId(id);
   };
   return (
     <>
-      <Container style={{ width: "400px" }}>
+      <Container>
         <Row>
-          <Col>
+          <Col xs lg="5">
             <UserInput id={UserId} SetuserId={SetuserId} />
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="mt-4">
         <Row>
-          <Col>
+          <Col xs lg="7">
             <UserDataList userlistId={userHandeler} />
           </Col>
         </Row>
