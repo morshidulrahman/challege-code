@@ -6,13 +6,9 @@ const UserInput = ({ id, SetuserId }) => {
   const [title, setTitle] = useState("");
   const [check, setCheck] = useState("");
   const [select, setSelect] = useState("");
-  const [data, setdata] = useState([]);
+
   const [message, setMessage] = useState({ error: false, msg: "" });
 
-  // const getselect = async () => {
-  //   const data = await UserDataService.allitemsData();
-  //   setdata(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -85,9 +81,30 @@ const UserInput = ({ id, SetuserId }) => {
           </Form.Group>
           <Form.Select onChange={(e) => setSelect(e.target.value)}>
             <option>Select your items</option>
-            <option value="Car">Car</option>
-            <option value="Bike">Bike</option>
-            <option value="Truck">Truck</option>
+            <option value="Construction & metarial">
+              Construction & metarial
+            </option>
+            <option value="Electronics and Optics">
+              Electronics and Optics
+            </option>
+            <option value="Food & veberage">Food & veberage</option>
+            <option value="Fish & fish products">Fish & fish products</option>
+            <option value="Meat & meat products">Meat & meat products</option>
+            <option value="Milk & dairy products">Milk & dairy products</option>
+            <option value="Sweets & snack foods">Sweets & snack foods</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Living room">Living room</option>
+            <option value="Project furniture">Project furniture</option>
+            <option value="Machinery components">Machinery components</option>
+            <option value="Aluminium and steel workboats">
+              Aluminium and steel workboats
+            </option>
+            <option value="Ship repair and conversion">
+              Ship repair and conversion
+            </option>
+            <option value="Houses and buildings">Houses and buildings</option>
+            <option value="Plustic and Rubber">Plustic and Rubber</option>
+            <option value="Textile and Clothing">Textile and Clothing</option>
           </Form.Select>
 
           <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
