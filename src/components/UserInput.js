@@ -60,7 +60,6 @@ const UserInput = ({ id, SetuserId }) => {
     if (id !== undefined && id !== "") {
       editHandler();
     }
-    getselect();
   }, [id]);
   return (
     <>
