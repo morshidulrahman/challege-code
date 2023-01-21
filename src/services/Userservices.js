@@ -34,6 +34,9 @@ class UserDataService {
     const userDoc = doc(db, "users", id);
     return getDoc(userDoc);
   };
+  allitemsData = () => {
+    return getDocs(collection(db, "allitems"));
+  };
 }
 
 export default new UserDataService();

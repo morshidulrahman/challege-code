@@ -6,9 +6,13 @@ const UserInput = ({ id, SetuserId }) => {
   const [title, setTitle] = useState("");
   const [check, setCheck] = useState("");
   const [select, setSelect] = useState("");
-
+  const [data, setdata] = useState([]);
   const [message, setMessage] = useState({ error: false, msg: "" });
 
+  // const getselect = async () => {
+  //   const data = await UserDataService.allitemsData();
+  //   setdata(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -56,6 +60,7 @@ const UserInput = ({ id, SetuserId }) => {
     if (id !== undefined && id !== "") {
       editHandler();
     }
+    getselect();
   }, [id]);
   return (
     <>

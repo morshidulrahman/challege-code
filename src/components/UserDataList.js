@@ -6,7 +6,7 @@ const UserDataList = ({ userlistId }) => {
   const [data, setdata] = useState([]);
   useEffect(() => {
     getallData();
-  }, []);
+  }, [data]);
 
   const getallData = async () => {
     const data = await UserDataService.getAllusers();
@@ -19,12 +19,6 @@ const UserDataList = ({ userlistId }) => {
   };
   return (
     <>
-      <div className="mb-3">
-        <Button variant="dark edit" onClick={getallData}>
-          Refresh List
-        </Button>
-      </div>
-
       {/* <pre>{JSON.stringify(users, undefined, 2)}</pre>} */}
       <Table striped bordered hover size="sm">
         <thead>
