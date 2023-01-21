@@ -4,7 +4,7 @@ import UserDataService from "../services/Userservices";
 
 const UserInput = ({ id, SetuserId }) => {
   const [title, setTitle] = useState("");
-  const [check, setCheck] = useState("");
+  const [check, setCheck] = useState("of");
   const [select, setSelect] = useState("");
 
   const [message, setMessage] = useState({ error: false, msg: "" });
@@ -36,7 +36,7 @@ const UserInput = ({ id, SetuserId }) => {
     }
     setSelect("");
     setTitle("");
-    setCheck("");
+    setCheck("of");
   };
 
   const editHandler = async () => {
@@ -110,7 +110,7 @@ const UserInput = ({ id, SetuserId }) => {
           <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
             <Form.Check
               type="checkbox"
-              label="Check me out"
+              label="Agree to terms and conditions"
               required
               onChange={(e) => setCheck(e.target.value)}
             />
